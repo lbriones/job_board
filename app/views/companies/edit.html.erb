@@ -1,5 +1,7 @@
 <h1>Edit company details</h1>
 
-<%= render 'company_form' %>
+<%= render 'company_form' %><br/>
 
-<%= link_to 'Cancel', @company %>
+<%= link_to 'Cancel', @company %><br/>
+
+<%= link_to 'Delete', @company, method: :delete, data: { confirm: 'Are you sure?' } %>
