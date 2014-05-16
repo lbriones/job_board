@@ -1,6 +1,13 @@
 <h1>Signup</h1>
 
-<%= form_for :company, url:  companies_path do |f| %>
+<%= form_for @company do |f| %>
+  <% if @company.errors.any? %>
+    <ul>
+    <% @company.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  <% end %>
   <p>
     <%= f.text_field  :name, placeholder: "Company name"  %>
   </p>
