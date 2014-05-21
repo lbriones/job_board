@@ -16,6 +16,21 @@ class PostsController < ApplicationController
     @posts = @company.posts
   end
 
+  def edit
+    @company = Company.find(params[:company_id])
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+
+    if @post.update(post_params)
+      redirect_to company_posts_path
+    else
+      render 'edit'
+    end
+  end
+
   private
     def post_params
       params.require(:post).permit(:title, :description)
