@@ -7,4 +7,5 @@
     Title: <%= post.title %><br>
     Description: <%= post.description %>
   </p>
+  <%= link_to 'Edit', edit_company_post_path(params[:company_id], post) %>
 <% end %>
