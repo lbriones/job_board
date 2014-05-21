@@ -1,0 +1,10 @@
+<h1>Published posts</h1>
+
+<%= link_to 'Create new post', new_company_post_path %>
+
+<% @posts.each do |post|  %>
+  <p>
+    Title: <%= post.title %><br>
+    Description: <%= post.description %>
+  </p>
+<% end %>
