@@ -8,4 +8,5 @@
     Description: <%= post.description %>
   </p>
   <%= link_to 'Edit', edit_company_post_path(params[:company_id], post) %>
+  <%= link_to 'Delete', company_post_path(id: post.id), method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
